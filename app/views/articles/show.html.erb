@@ -1,3 +1,7 @@
-<h1>this is the show html file</h1>
+<h1>this is the show article details html file</h1>
 <p><strong>the title is</strong> <%= @article.title %> </p>
 <p><strong>the description is </strong> <%= @article.description %> </p>
+
+<%= link_to 'Edit', edit_article_path(@article), mathod: :get %> |
+<%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "are you sure?"} %> |
+<%= link_to 'Return to articles listing', articles_path, method: :get %>

@@ -5,7 +5,7 @@
     <tr>
       <th>Title</th>
       <th>Description</th>
-      <th>Actions</th>
+      <th colspan = "3">Actions</th>
     </tr>
   </thead>
 
@@ -14,8 +14,14 @@
       <tr>
         <td><%= stuff.title %></td>
         <td><%= stuff.description %></td>
-        <td>placeholder</td>
+        <td><%= link_to 'Show', article_path(stuff.id), method: :get %></td>
+        <td><%= #this works too --> link_to 'Edit', article_path(stuff.id)+'/edit', method: :get
+                link_to 'Edit', edit_article_path(stuff.id), method: :get%></td>
+        <td><%= link_to 'Delete', article_path(stuff.id), method: :delete, data: {confirm: "are you sure?"} %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<h3><%= link_to 'Create new article', new_article_path, method: :get %></h3>
+<%= link_to 'Back to home', root_path %>
