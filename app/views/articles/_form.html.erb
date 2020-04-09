@@ -2,7 +2,7 @@
 
   <div class="row justify-content-center">
     <div class="col-10">
-      <%= render 'shared/errors.html.erb' %>
+      <%= render 'shared/errors.html.erb', whut: @article %>
       <%= form_with(model: @article, class: "shadow-lg p-3 mb-3 bg-info rounded", local: true) do |f| %>
 
       <div class="form-group row">
