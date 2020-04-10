@@ -1,34 +1,3 @@
 
 <h1 class="text-center mt-4">articles listing page</h1>
-<div class="container">
-  <% @articles.each do |stuff| %>
-    <div class="row justify-content-md-center">
-      <div class="col-6 mt-4">
-        <div class="shadow-lg mb-5 bg-white rounded">
-        <div class="card text-center">
-          <div class="card-header font-italic">
-            by <%= stuff.user.username if stuff.user %>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title"><%= link_to stuff.title, article_path(stuff), class: "text-primary" %></h5>
-            <p class="card-text"><%= truncate(stuff.description, length: 10) %></p>
-            <!--<a href="#" class="btn btn-outline-primary">View</a> -->
-            <%= link_to 'View', article_path(stuff),class: "btn btn-outline-primary" %>
-            <!--<a href="#" class="btn btn-outline-success">Edit</a> -->
-            <%= link_to 'Edit', edit_article_path(stuff), class: "btn btn-outline-success" %>
-            <!--<a href="#" class="btn btn-outline-danger">Destroy</a> -->
-            <%= link_to 'Destroy', article_path(stuff), method: :delete, data: {confirm: "are you sure?"}, class: "btn btn-outline-danger" %>
-          </div>
-          <div class="card-footer text-muted">
-            <small>
-              Created <%= time_ago_in_words(stuff.created_at) %> ago,
-              Edited <%= time_ago_in_words(stuff.updated_at) %> ago
-            </small>
-
-          </div>
-        </div>
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
+<%= render "article-list.html.erb" %>

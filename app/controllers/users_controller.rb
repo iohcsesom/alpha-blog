@@ -27,6 +27,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    @articles = User.find(params[:id]).articles
+  end
 
 
 
