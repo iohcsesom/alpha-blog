@@ -25,14 +25,14 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:notice] = "your account info was succesfully updated"
-      redirect_to articles_path
+      redirect_to user_path(@user)
     else
       render "edit.html.erb"
     end
   end
 
   def show
-    @user = User.find(params[:id])
+    @aUser = User.find(params[:id])
     @articles = User.find(params[:id]).articles
   end
 

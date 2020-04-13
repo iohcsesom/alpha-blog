@@ -5,7 +5,9 @@
         <div class="shadow-lg mb-5 bg-white rounded">
         <div class="card text-center">
           <div class="card-header font-italic">
-            by <%= stuff.user.username if stuff.user %>
+            <% if stuff.user %>
+              by <%= link_to stuff.user.username, user_path(stuff.user)  %>
+            <% end %>
           </div>
           <div class="card-body">
             <h5 class="card-title"><%= link_to stuff.title, article_path(stuff), class: "text-primary" %></h5>
