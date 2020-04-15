@@ -1,3 +1,18 @@
 
 <h1 class="text-center mt-4">articles listing page</h1>
+
+<div class="apple_pagination mb-4">
+    <div class="page_info">
+      <%= page_entries_info @articles %>
+    </div>
+    <%= will_paginate @articles, :container => false %>
+  </div>
+  
 <%= render "article-list.html.erb" %>
+
+<div class="apple_pagination mb-4">
+    <div class="page_info">
+      <%= page_entries_info @articles %>
+    </div>
+    <%= will_paginate @articles, :container => false %>
+  </div>
